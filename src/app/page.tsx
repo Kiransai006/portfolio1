@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import FunGames from "@/components/FunGames";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <About />
         <Experience />
         <Skills />
+        <FunGames />
         <Contact />
         <footer className="py-8 px-6 border-t border-white/10 text-center text-gray-400 text-sm bg-black/10">
           © {new Date().getFullYear()} Kiran Bandaru. Built with Next.js, Tailwind CSS & Framer Motion.

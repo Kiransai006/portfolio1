@@ -8,20 +8,30 @@ const experiences = [
     title: "Software Engineer",
     company: "LexisNexis",
     highlights: [
-      "Cut manual deployments by 45% through automation and pipeline improvements.",
-      "Automated infrastructure with Terraform for consistent, repeatable environments.",
-      "Optimized AWS and Azure platforms, achieving 30% better uptime.",
+      "Built and maintained CI/CD pipelines using Jenkins, GitLab CI, and Azure DevOps, reducing deployment time by 40% and improving release stability by 35%.",
+      "Automated cloud infrastructure using Infrastructure as Code (Terraform / CloudFormation / ARM), cutting manual errors by 60% and ensuring regulatory compliance.",
+      "Supported and optimized AWS / Azure environments, achieving 99.9% system availability and reducing infrastructure costs by 20%.",
+      "Implemented Docker and Kubernetes, increasing deployment frequency by 45% and improving application scalability and resilience.",
+      "Embedded security and compliance best practices into CI/CD pipelines, reducing vulnerabilities by 40% in line with banking standards.",
+      "Monitored production systems and resolved incidents, reducing MTTR by 35% through proactive monitoring and root cause analysis.",
+      "Mature Bash and Python automation scripts, reducing functional manual effort by 50% across Linux-based systems.",
+      "Participated in incident response and troubleshooting to ensure application availability and reliability."
     ],
+    
   },
   {
     period: "2021 – 2023",
     title: "Junior Software Engineer",
     company: "Kotak",
     highlights: [
-      "Reduced deployment time by 40% by streamlining release processes.",
-      "Implemented Docker and Kubernetes for containerized workloads.",
-      "Achieved 99.9% system availability for critical services.",
+      "Built and maintained CI/CD pipelines using Jenkins and GitLab CI, cutting manual deployments by 45% and boosting release frequency.",
+      "Automated cloud infrastructure with Terraform/IaC, enabling 60% quicker environment setup while ensuring compliance and scalability.",
+      "Optimised AWS/Azure platforms, improving uptime by 30% via monitoring, auto scaling, and performance tuning.",
+      "Streamlined deployment and release processes with development, security, and QA teams, reducing failures by 35%.",
+      "Implemented Docker/Kubernetes orchestration, raising deployment efficiency by 40% and optimising resources. Integrated security and compliance controls into CI/CD pipelines, lowering incidents by 25%.",
+      "Monitored systems and resolved production issues, achieving 20% quicker MTTR."
     ],
+    
   },
 ];
 

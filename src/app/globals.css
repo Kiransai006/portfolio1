@@ -5,10 +5,34 @@
 :root {
   --accent: #2563eb;
   --accent-orange: #ff9900;
-  --bg-gradient-start: #1e1b4b;
-  --bg-gradient-mid: #312e81;
-  --bg-gradient-end: #0f172a;
   --bg-card: rgba(30, 27, 75, 0.6);
+
+  /* Default / dark theme */
+  --bg-body: linear-gradient(
+    135deg,
+    #1e1b4b 0%,
+    #312e81 25%,
+    #1e3a5f 50%,
+    #0c4a6e 75%,
+    #134e4a 100%
+  );
+  --navbar-bg: rgba(30, 27, 75, 0.75);
+}
+
+[data-theme="night"] {
+  /* Deeper, more contrasted night palette */
+  --bg-body: radial-gradient(
+      circle at top left,
+      rgba(129, 140, 248, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(6, 182, 212, 0.22),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #020617 0%, #020617 40%, #0b1120 100%);
+  --navbar-bg: rgba(15, 23, 42, 0.9);
 }
 
 html {
@@ -17,14 +41,7 @@ html {
 
 body {
   @apply text-gray-100 antialiased min-h-screen;
-  background: linear-gradient(
-    135deg,
-    #1e1b4b 0%,
-    #312e81 25%,
-    #1e3a5f 50%,
-    #0c4a6e 75%,
-    #134e4a 100%
-  );
+  background: var(--bg-body);
   background-attachment: fixed;
 }
 

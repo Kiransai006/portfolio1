@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "../components/ThemeProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,10 +27,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="dark"
       className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body className="font-sans text-gray-100 min-h-screen relative">
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
