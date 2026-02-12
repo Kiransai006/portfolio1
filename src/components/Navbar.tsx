@@ -28,12 +28,35 @@ export default function Navbar() {
       style={{ background: "var(--navbar-bg)" }}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="#home" className="text-xl font-semibold text-white hover:text-accent-cobalt transition-colors">
-          KB
+        <Link
+          href="#home"
+          className="group flex items-center gap-2.5 font-semibold text-white transition-colors hover:text-accent-cobalt"
+          aria-label="Kiran Bandaru - Home"
+        >
+          <span className="flex h-9 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-1.5 py-1 shadow-sm transition-all group-hover:border-cyan-400/40 group-hover:bg-white/10 group-hover:shadow-md">
+            <span className="font-mono text-sm font-bold tracking-tighter text-white">
+              K<span className="text-cyan-400/90">B</span>
+            </span>
+          </span>
+          <span className="hidden text-base tracking-tight sm:inline md:text-lg">Kiran Bandaru</span>
         </Link>
 
         <div className="flex items-center gap-4">
-          {/* Theme toggle */}
+          {/* Desktop nav */}
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-gray-400 hover:text-accent-cobalt transition-colors text-sm font-medium"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Theme toggle - corner */}
           <button
             type="button"
             onClick={toggleTheme}
@@ -55,20 +78,6 @@ export default function Navbar() {
               Night
             </span>
           </button>
-
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-gray-400 hover:text-accent-cobalt transition-colors text-sm font-medium"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
 
           {/* Mobile menu button */}
           <button
@@ -94,19 +103,44 @@ export default function Navbar() {
         animate={{ height: mobileOpen ? "auto" : 0, opacity: mobileOpen ? 1 : 0 }}
         className="md:hidden overflow-hidden border-t border-white/5"
       >
-        <ul className="px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block text-gray-400 hover:text-accent-cobalt transition-colors font-medium"
-                onClick={() => setMobileOpen(false)}
+        <div className="px-6 py-4 flex flex-col gap-4">
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-black/10 px-2 py-1 text-[11px] font-medium text-gray-300 shadow-sm hover:border-accent-cobalt hover:text-white transition-colors"
+              aria-label="Toggle color theme"
+            >
+              <span
+                className={`px-2 py-0.5 rounded-full transition-colors ${
+                  theme === "dark" ? "bg-accent-cobalt text-white" : "text-gray-400"
+                }`}
               >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                Dark
+              </span>
+              <span
+                className={`px-2 py-0.5 rounded-full transition-colors ${
+                  theme === "night" ? "bg-accent-orange text-black" : "text-gray-400"
+                }`}
+              >
+                Night
+              </span>
+            </button>
+          </div>
+          <ul className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="block text-gray-400 hover:text-accent-cobalt transition-colors font-medium"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </motion.div>
     </motion.header>
   );

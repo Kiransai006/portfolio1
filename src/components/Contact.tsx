@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const contactLinks = [
   {
@@ -45,6 +46,40 @@ const contactLinks = [
 ];
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const message = formData.get("message") as string;
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, message }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Failed to send.");
+        return;
+      }
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage("Network error. Please try again.");
+    }
+  }
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
@@ -64,9 +99,61 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-gray-400 mb-12 max-w-xl mx-auto"
         >
-          I&apos;m open to new opportunities and happy to connect. Reach out via
-          email, phone, or LinkedIn — or find me in Dublin, Ireland.
+          I&apos;m open to new opportunities and happy to connect. Drop me a message below, or reach out via email, phone, or LinkedIn.
         </motion.p>
+
+        {/* Contact form */}
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          onSubmit={handleSubmit}
+          className="mb-12 mx-auto max-w-lg text-left rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 shadow-xl"
+        >
+          <div className="grid gap-4 sm:gap-5">
+            <div>
+              <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-1.5">
+                Name
+              </label>
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                required
+                placeholder="Your name"
+                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-cyan-400/50 focus:outline-none focus:ring-1 focus:ring-cyan-400/30"
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-1.5">
+                Message
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows={4}
+                placeholder="Your message..."
+                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-cyan-400/50 focus:outline-none focus:ring-1 focus:ring-cyan-400/30 resize-y min-h-[100px]"
+              />
+            </div>
+            {status === "success" && (
+              <p className="text-sm text-emerald-400">Message sent. I&apos;ll get back to you soon.</p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-400">{errorMessage}</p>
+            )}
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full rounded-xl bg-gradient-to-r from-purple-500 to-cyan-400 py-3 px-4 font-medium text-white shadow-lg hover:opacity-95 disabled:opacity-70 disabled:cursor-not-allowed transition-opacity"
+            >
+              {status === "sending" ? "Sending..." : "Send message"}
+            </button>
+          </div>
+        </motion.form>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

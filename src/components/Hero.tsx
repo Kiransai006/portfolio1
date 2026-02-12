@@ -75,7 +75,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-xl sm:text-2xl text-accent-cobalt font-semibold mb-4"
           >
-            AWS DevOps Engineer / MSc Computing Student
+            AWS DevOps Engineer / MSc Computing Science
+            
           </motion.p>
 
           <motion.p
@@ -125,6 +126,37 @@ export default function Hero() {
                 {skill}
               </span>
             ))}
+          </motion.div>
+
+          {/* Kubernetes, Docker, ArgoCD logos */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-6 flex flex-wrap items-center gap-6 justify-center lg:justify-start"
+            aria-label="DevOps tools: Kubernetes, Docker, ArgoCD"
+          >
+            {/* Kubernetes */}
+            <div className="flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2.5">
+              <svg viewBox="0 0 24 24" className="h-8 w-8 text-white/90" fill="currentColor" aria-hidden>
+                <path d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 2.18l6.9 3.45v6.9L12 19.82l-6.9-3.45v-6.9L12 4.18z" />
+              </svg>
+              <span className="text-sm font-medium text-gray-300">Kubernetes</span>
+            </div>
+            {/* Docker */}
+            <div className="flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2.5">
+              <svg viewBox="0 0 24 24" className="h-8 w-8 text-cyan-400/90" fill="currentColor" aria-hidden>
+                <path d="M4.5 10h2v2h-2v-2zm0 3h2v2h-2v-2zm2.5-6h2v2H7V7zm2.5 3h2v2h-2v-2zm2.5-3h2v2h-2V7zm2.5 3h2v2h-2v-2zm-7.5 3h2v2H7v-2zm2.5 0h2v2h-2v-2zm2.5 0h2v2h-2v-2z" />
+              </svg>
+              <span className="text-sm font-medium text-gray-300">Docker</span>
+            </div>
+            {/* ArgoCD */}
+            <div className="flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2.5">
+              <svg viewBox="0 0 24 24" className="h-8 w-8 text-white/90" fill="currentColor" aria-hidden>
+                <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 2a8 8 0 110 16 8 8 0 010-16zm0 2a6 6 0 000 12 6 6 0 000-12zm0 2v8l5.2-4L12 8z" />
+              </svg>
+              <span className="text-sm font-medium text-gray-300">ArgoCD</span>
+            </div>
           </motion.div>
         </div>
       </div>

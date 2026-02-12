@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
+import DevOpsBackground from "../components/DevOpsBackground";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body className="font-sans text-gray-100 min-h-screen relative">
+        <DevOpsBackground />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
