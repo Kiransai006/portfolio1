@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await resend.emails.send({
+    const resp = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "Portfolio <onboarding@resend.dev>",
       to: TO_EMAIL,
       subject: `Portfolio message from ${name}`,
@@ -37,19 +37,23 @@ export async function POST(request: Request) {
       `,
     });
 
-    if (error) {
-      console.error("Resend error:", error);
+    console.log("Resend response:", resp);
+
+    // Some SDK responses may include an `error` property or throw; handle both.
+    if ((resp as any)?.error) {
+      console.error("Resend send error:", (resp as any).error);
       return NextResponse.json(
-        { error: "Failed to send message. Please try again." },
+        { error: (resp as any).error || "Failed to send message. Please try again." },
         { status: 500 }
       );
     }
 
     return NextResponse.json({ success: true });
-  } catch (err) {
+  } catch (err: any) {
     console.error("Contact API error:", err);
+    const message = err?.message || JSON.stringify(err) || "Something went wrong. Please try again.";
     return NextResponse.json(
-      { error: "Something went wrong. Please try again." },
+      { error: message },
       { status: 500 }
     );
   }
