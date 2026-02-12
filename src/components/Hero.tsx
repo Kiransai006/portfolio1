@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="relative w-full h-64 sm:h-72 lg:h-80 rounded-full overflow-hidden bg-gradient-to-tr from-indigo-900/40 to-purple-900/50 shadow-2xl ring-4 ring-white/10 group-hover:scale-105 transition-transform duration-500">
             <img
               src="/profile.jpg"
-              alt="Kiran Bandaru - AWS DevOps Engineer/SRE Engineer"
+              alt="Kiran Bandaru - DevOps / SRE Engineer"
               className="w-full h-full object-cover object-top"
               onError={(e) => {
                 const el = e.currentTarget;
@@ -75,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-xl sm:text-2xl text-accent-cobalt font-semibold mb-4"
           >
-            AWS DevOps Engineer / SRE Engineer
+            DevOps / SRE Engineer
             
           </motion.p>
 
@@ -111,22 +111,14 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Skill Chips */}
+          {/* Empty spacer (skills link removed per request) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start"
-          >
-            {["AWS", "Terraform", "Kubernetes", "CI/CD", "Docker", "Ansible"].map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400 text-white text-sm font-medium hover:scale-110 transition-transform"
-              >
-                {skill}
-              </span>
-            ))}
-          </motion.div>
+            className="mt-8"
+            aria-hidden
+          />
           
         </div>
       </div>

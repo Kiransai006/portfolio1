@@ -65,6 +65,7 @@ function getSkillUrl(skill: string): string | undefined {
 }
 
 export default function Skills() {
+  const highlight = ["AWS", "Terraform", "Kubernetes", "CI/CD", "Docker", "Ansible"];
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
@@ -89,14 +90,16 @@ export default function Skills() {
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/30 transition-colors"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl" aria-hidden>{category.icon}</span>
+                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center text-white text-xl shadow-sm">
+                  {category.icon}
+                </div>
                 <h3 className="text-lg font-semibold text-white">{category.title}</h3>
               </div>
-              <ul className="flex flex-wrap gap-2">
+              <ul className="flex flex-wrap gap-3">
                 {category.items.map((skill) => {
                   const url = getSkillUrl(skill);
                   const content = (
-                    <span className="inline-block px-3 py-1.5 rounded-md bg-white/10 text-gray-300 text-sm border border-white/10 hover:border-indigo-400/40 hover:text-indigo-200 transition-colors">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-gradient-to-r from-purple-400 to-cyan-400 text-white text-sm font-semibold shadow-md transform hover:scale-105 transition-all">
                       {skill}
                     </span>
                   );
