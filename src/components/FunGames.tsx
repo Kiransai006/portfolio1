@@ -343,7 +343,7 @@ function BrainGame() {
 
 export default function FunGames() {
   return (
-    <section id="fun" className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-black/30 to-black/50">
+    <section id="fun" className="relative py-24 px-6 overflow-hidden">
       {/* DevOps logos background — subtle floating icons */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <div className="absolute inset-0 opacity-[0.06]">

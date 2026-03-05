@@ -27,7 +27,7 @@ const services = [
 
 export default function WhatIDo() {
   return (
-    <section id="what-i-do" className="py-24 px-6 bg-gradient-to-b from-black/30 to-black/50">
+    <section id="what-i-do" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
