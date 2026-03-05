@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const experiences = [
   {
@@ -9,7 +8,6 @@ const experiences = [
     title: "DevOps Engineer",
     company: "Cognizant",
     client: "LexisNexis",
-    logo: "/logos/cognizant.png", // place company logo at public/logos
     highlights: [
       "Built and maintained CI/CD pipelines using Jenkins, GitLab CI, and Azure DevOps, reducing deployment time by 40% and improving release stability by 35%.",
       "Automated cloud infrastructure using Infrastructure as Code (Terraform / CloudFormation / ARM), cutting manual errors by 60% and ensuring regulatory compliance.",
@@ -26,7 +24,6 @@ const experiences = [
     title: "Junior DevOps Engineer",
     company: "Cognizant",
     client: "Kotak",
-    logo: "/logos/cognizant.png",
     highlights: [
       "Built and maintained CI/CD pipelines using Jenkins and GitLab CI, cutting manual deployments by 45% and boosting release frequency.",
       "Automated cloud infrastructure with Terraform/IaC, enabling 60% quicker environment setup while ensuring compliance and scalability.",
@@ -71,19 +68,8 @@ export default function Experience() {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/30 transition-colors">
                   <p className="text-accent-cobalt font-mono text-sm mb-1">{exp.period}</p>
                   <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                  <p className="text-gray-400 font-medium mb-2 flex items-center gap-2">
-                    {exp.logo && (
-                      <Image
-                        src={exp.logo}
-                        alt={exp.company}
-                        width={24}
-                        height={24}
-                        className="h-6 w-auto object-contain"
-                      />
-                    )}
-                    <span>
-                      {exp.company}{exp.client ? ` – Client: ${exp.client}` : ""}
-                    </span>
+                  <p className="text-gray-400 font-medium mb-2">
+                    {exp.company}{exp.client ? ` – Client: ${exp.client}` : ""}
                   </p>
                   <ul className="space-y-2">
                     {exp.highlights.map((item, j) => (
