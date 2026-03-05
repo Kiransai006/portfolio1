@@ -67,7 +67,7 @@ function getSkillUrl(skill: string): string | undefined {
 export default function Skills() {
   const highlight = ["AWS", "Terraform", "Kubernetes", "CI/CD", "Docker", "Ansible"];
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-24 px-6 bg-gradient-to-b from-black/30 to-black/50">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

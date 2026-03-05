@@ -52,7 +52,7 @@ export default function About() {
         <li className="flex items-start space-x-3">
           <FaGraduationCap className="mt-1 text-accent-cobalt" />
           <span>
-            <strong>Learner & Explorer:</strong> Currently pursuing a Master’s in Computing Science at Griffith College, Dublin, diving deeper into distributed systems and cloud-native architectures.
+            <strong>Learner & Explorer:</strong> Master's in Computing Science at Griffith College, Dublin (Jan 2025 - Jun 2026), diving deeper into distributed systems and cloud-native architectures.
           </span>
         </li>
         <li className="flex items-start space-x-3">

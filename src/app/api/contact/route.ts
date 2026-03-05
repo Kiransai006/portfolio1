@@ -17,11 +17,11 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, message } = body;
+    const { name, email, message } = body;
 
-    if (!name?.trim() || !message?.trim()) {
+    if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return NextResponse.json(
-        { error: "Name and message are required." },
+        { error: "Name, email and message are required." },
         { status: 400 }
       );
     }
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       to: TO_EMAIL,
       subject: `Portfolio message from ${name}`,
       html: `
-        <p><strong>From:</strong> ${name}</p>
+        <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,

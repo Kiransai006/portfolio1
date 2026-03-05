@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     period: "2023 – 2025",
-    title: "Software Engineer",
-    company: "LexisNexis",
+    title: "DevOps Engineer",
+    company: "Cognizant",
+    client: "LexisNexis",
+    logo: "/logos/cognizant.png", // place company logo at public/logos
     highlights: [
       "Built and maintained CI/CD pipelines using Jenkins, GitLab CI, and Azure DevOps, reducing deployment time by 40% and improving release stability by 35%.",
       "Automated cloud infrastructure using Infrastructure as Code (Terraform / CloudFormation / ARM), cutting manual errors by 60% and ensuring regulatory compliance.",
@@ -17,12 +19,13 @@ const experiences = [
       "Mature Bash and Python automation scripts, reducing functional manual effort by 50% across Linux-based systems.",
       "Participated in incident response and troubleshooting to ensure application availability and reliability."
     ],
-    
   },
   {
     period: "2021 – 2023",
-    title: "Junior Software Engineer",
-    company: "Kotak",
+    title: "Junior DevOps Engineer",
+    company: "Cognizant",
+    client: "Kotak",
+    logo: "/logos/cognizant.png",
     highlights: [
       "Built and maintained CI/CD pipelines using Jenkins and GitLab CI, cutting manual deployments by 45% and boosting release frequency.",
       "Automated cloud infrastructure with Terraform/IaC, enabling 60% quicker environment setup while ensuring compliance and scalability.",
@@ -31,13 +34,12 @@ const experiences = [
       "Implemented Docker/Kubernetes orchestration, raising deployment efficiency by 40% and optimising resources. Integrated security and compliance controls into CI/CD pipelines, lowering incidents by 25%.",
       "Monitored systems and resolved production issues, achieving 20% quicker MTTR."
     ],
-    
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-24 px-6 bg-gradient-to-b from-black/30 to-black/50">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +70,14 @@ export default function Experience() {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/30 transition-colors">
                   <p className="text-accent-cobalt font-mono text-sm mb-1">{exp.period}</p>
                   <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                  <p className="text-gray-400 font-medium mb-4">{exp.company}</p>
+                  <p className="text-gray-400 font-medium mb-2 flex items-center gap-2">
+                    {exp.logo && (
+                      <img src={exp.logo} alt={exp.company} className="h-6 w-auto" />
+                    )}
+                    <span>
+                      {exp.company}{exp.client ? ` – Client: ${exp.client}` : ""}
+                    </span>
+                  </p>
                   <ul className="space-y-2">
                     {exp.highlights.map((item, j) => (
                       <li key={j} className="text-gray-400 text-sm sm:text-base flex gap-2">
