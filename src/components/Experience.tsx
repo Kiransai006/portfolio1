@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const experiences = [
   {
@@ -72,7 +73,13 @@ export default function Experience() {
                   <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
                   <p className="text-gray-400 font-medium mb-2 flex items-center gap-2">
                     {exp.logo && (
-                      <img src={exp.logo} alt={exp.company} className="h-6 w-auto" />
+                      <Image
+                        src={exp.logo}
+                        alt={exp.company}
+                        width={24}
+                        height={24}
+                        className="h-6 w-auto object-contain"
+                      />
                     )}
                     <span>
                       {exp.company}{exp.client ? ` – Client: ${exp.client}` : ""}
