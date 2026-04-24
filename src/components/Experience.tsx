@@ -4,33 +4,32 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    period: "2023 – 2025",
-    title: "DevOps Engineer",
+    period: "Mar 2023 – Feb 2025",
+    title: "Application Deployment Team — LEXIS NEXIS",
     company: "Cognizant",
     client: "LexisNexis",
     highlights: [
-      "Built and maintained CI/CD pipelines using Jenkins, GitLab CI, and Azure DevOps, reducing deployment time by 40% and improving release stability by 35%.",
-      "Automated cloud infrastructure using Infrastructure as Code (Terraform / CloudFormation / ARM), cutting manual errors by 60% and ensuring regulatory compliance.",
-      "Supported and optimized AWS / Azure environments, achieving 99.9% system availability and reducing infrastructure costs by 20%.",
-      "Implemented Docker and Kubernetes, increasing deployment frequency by 45% and improving application scalability and resilience.",
-      "Embedded security and compliance best practices into CI/CD pipelines, reducing vulnerabilities by 40% in line with banking standards.",
-      "Monitored production systems and resolved incidents, reducing MTTR by 35% through proactive monitoring and root cause analysis.",
-      "Mature Bash and Python automation scripts, reducing functional manual effort by 50% across Linux-based systems.",
-      "Participated in incident response and troubleshooting to ensure application availability and reliability."
+      "Built and maintained CI/CD pipelines using Jenkins, GitLab CI, and Azure DevOps, enabling daily production deployments across dev, staging, and production environments for 4–5 microservices.",
+      "Provisioned and managed cloud infrastructure using Terraform and CloudFormation across AWS and Azure, reducing environment setup time by ~60% through infrastructure-as-code practices.",
+      "Managed containerised workloads using Docker and Kubernetes across all environments, handling rolling deployments, autoscaling policies, and resource limits for production-grade clusters.",
+      "Implemented GitOps workflows using ArgoCD, improving deployment traceability and enabling the 4–5 person engineering team to self-serve releases with full audit trails.",
+      "Embedded security and compliance checks into CI/CD pipelines in line with banking-sector standards, reducing pipeline-level vulnerabilities.",
+      "Monitored production systems using Prometheus, Grafana, Datadog, and Splunk — establishing alerting thresholds and dashboards that reduced mean time to detection (MTTD) for incidents.",
+      "Automated configuration and environment provisioning using Ansible and Bash/Python scripts, eliminating manual setup steps across Linux-based systems.",
+      "Supported on-call rotations, incident triage, and root cause analysis to maintain SLA adherence across daily release cycles.",
     ],
   },
   {
-    period: "2021 – 2023",
-    title: "Junior DevOps Engineer",
+    period: "Sep 2021 – Mar 2023",
+    title: "Team DevOps — KOTAK MAHINDRA",
     company: "Cognizant",
-    client: "Kotak",
+    client: "Kotak Mahindra",
     highlights: [
-      "Built and maintained CI/CD pipelines using Jenkins and GitLab CI, cutting manual deployments by 45% and boosting release frequency.",
-      "Automated cloud infrastructure with Terraform/IaC, enabling 60% quicker environment setup while ensuring compliance and scalability.",
-      "Optimised AWS/Azure platforms, improving uptime by 30% via monitoring, auto scaling, and performance tuning.",
-      "Streamlined deployment and release processes with development, security, and QA teams, reducing failures by 35%.",
-      "Implemented Docker/Kubernetes orchestration, raising deployment efficiency by 40% and optimising resources. Integrated security and compliance controls into CI/CD pipelines, lowering incidents by 25%.",
-      "Monitored systems and resolved production issues, achieving 20% quicker MTTR."
+      "Supported CI/CD pipeline setup and maintenance using Jenkins and GitLab CI, contributing to daily deployment workflows across multiple environments.",
+      "Assisted in provisioning cloud infrastructure on AWS and Azure using Terraform and ARM templates, building foundational IaC skills in a production context.",
+      "Contributed to containerisation efforts using Docker and Kubernetes, supporting migration of applications to container-based deployments.",
+      "Automated repetitive operational tasks using Bash and Python scripts across Linux-based systems, reducing manual effort for the team.",
+      "Participated in incident response, on-call rotations, and production monitoring using Prometheus — developing core SRE practices in a live environment.",
     ],
   },
 ];
