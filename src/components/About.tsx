@@ -34,7 +34,7 @@ export default function About() {
         I turn chaos into code. With 3.5 years as a DevOps Engineer at Cognizant, I’ve mastered the art of automating deployments, optimizing cloud environments, and making software delivery seamless. What started as a career quickly became a hobby—I genuinely enjoy building pipelines, architecting AWS solutions, and seeing systems run flawlessly.
       </p>
 
-      <p className="font-semibold">The "Kiran" Edge</p>
+      <p className="font-semibold">The &quot;Kiran&quot; Edge</p>
 
       <ul className="list-none space-y-4">
         <li className="flex items-start space-x-3">
@@ -64,7 +64,7 @@ export default function About() {
       </ul>
 
       <p className="italic mt-4">
-        "DevOps isn’t just tools—it’s the art of making software delivery invisible, seamless, and unstoppable."
+        &quot;DevOps isn’t just tools—it’s the art of making software delivery invisible, seamless, and unstoppable.&quot;
       </p>
     </motion.div>
   </div>

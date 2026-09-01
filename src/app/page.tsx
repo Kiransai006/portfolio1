@@ -9,6 +9,7 @@ import Certifications from "@/components/Certifications";
 import FunGames from "@/components/FunGames";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Education from "@/components/Education";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <Education />
         <Projects />
         <WhatIDo />
         <Skills />

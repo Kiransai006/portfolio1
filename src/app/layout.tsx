@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kiran Bandaru | AWS DevOps Engineer",
+  title: "Kiran Subrahamanya Sai Bandaru | AWS DevOps Engineer",
   description:
     "AWS DevOps Engineer / Systems Engineer with 3.5 years of experience. Cloud-native platforms, CI/CD automation, Kubernetes.",
 };

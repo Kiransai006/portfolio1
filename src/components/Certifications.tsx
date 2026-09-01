@@ -3,13 +3,51 @@
 import { motion } from "framer-motion";
 
 const certifications = [
-  { name: "AWS Certified Cloud Practitioner", file: "AWS Certified Cloud Practitioner.pdf", issuer: "Amazon Web Services", date: "2023" },
-  { name: "AWS (UC)", file: "UC-AWS.pdf", issuer: "Coursera / UC", date: "2022" },
-  { name: "Azure AI Fundamentals (AI-900)", file: "UC-AI-900.pdf", issuer: "Microsoft", date: "2023" },
-  { name: "Azure Fundamentals (AZ-900)", file: "AZ-900 Certification.pdf", issuer: "Microsoft", date: "2022" },
-  { name: "Azure DevOps (AZ-400)", file: "AZ-400 Azure Devops.pdf", issuer: "Microsoft", date: "2024" },
-  { name: "Azure 0 to Hero", file: "AZURE 0toHero uc.pdf", issuer: "Coursera / UC", date: "2021" },
-  { name: "ADF Certification", file: "ADF Certification.pdf", issuer: "Internal / Training", date: "2021" },
+  {
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2023",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-9579085d-e8bd-403d-baa5-3add7e1920a0" }],
+  },
+  {
+    name: "AWS (UC)",
+    issuer: "Coursera / UC",
+    date: "2022",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-e8f5f502-6cfb-41ee-a9e6-437a8969f676" }],
+  },
+  {
+    name: "Azure AI Fundamentals (AI-900)",
+    issuer: "Microsoft",
+    date: "2023",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-a24c6f79-ba4b-4d84-90d2-c94d85aa7f6f" }],
+  },
+  {
+    name: "Azure Fundamentals (AZ-900)",
+    issuer: "Microsoft",
+    date: "2022",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-0596aa78-0483-401f-8ffc-e53638c3a5е3" }],
+  },
+  {
+    name: "Azure DevOps (AZ-400)",
+    issuer: "Microsoft",
+    date: "2024",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-994ef11a-c69a-4512-9086-79b7968baЗа0" }],
+  },
+  {
+    name: "Azure 0 to Hero",
+    issuer: "Coursera / UC",
+    date: "2021",
+    links: [{ label: "View Certificate", href: "https://ude.my/UC-44f04988-8be8-4d5c-b261-ac4fa41f675e" }],
+  },
+  {
+    name: "ADF Certification",
+    issuer: "Internal / Training",
+    date: "2021",
+    links: [
+      { label: "Credly Share", href: "https://www.credly.com/earner/earned/share/acd62d5e-08e0-4fe7-b60d-73667ca84bef" },
+      { label: "Credly Public", href: "https://www.credly.com/badges/acd62d5e-08e0-4fe7-b60d-73667ca84bef/public_url" },
+    ],
+  },
 ];
 
 export default function Certifications() {
@@ -29,7 +67,7 @@ export default function Certifications() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, i) => (
             <motion.article
-              key={cert.file}
+              key={cert.name}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -37,39 +75,24 @@ export default function Certifications() {
               className="flex flex-col h-full p-5 rounded-xl bg-gradient-to-br from-white/3 to-white/2 border border-white/8 shadow-md"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                    <path d="M21 8V21H3V8" stroke="rgba(255,255,255,0.9)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M7 8V5a5 5 0 0110 0v3" stroke="rgba(99,102,241,0.95)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 12v6" stroke="rgba(255,255,255,0.9)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-
                 <div className="flex-1">
                   <h3 className="text-white text-lg font-semibold">{cert.name}</h3>
                   <p className="text-gray-300 text-sm mt-1">{cert.issuer} · <span className="text-gray-400">{cert.date}</span></p>
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-white/6 flex items-center gap-3">
-                <a
-                  href={`/certifications/${encodeURIComponent(cert.file)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-500 transition-colors"
-                >
-                  View
-                </a>
-
-                <a
-                  href={`/certifications/${encodeURIComponent(cert.file)}`}
-                  download
-                  className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white/6 text-gray-100 text-sm hover:bg-white/10 transition-colors"
-                >
-                  Download
-                </a>
-
-                <span className="ml-auto text-gray-400 text-xs">PDF</span>
+              <div className="mt-4 pt-4 border-t border-white/6 flex flex-wrap gap-3">
+                {cert.links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-500 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
               </div>
             </motion.article>
           ))}

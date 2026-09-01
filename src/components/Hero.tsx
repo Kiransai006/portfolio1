@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaArrowRight, FaDownload } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -40,13 +40,9 @@ export default function Hero() {
           {/* Glassy 3D Profile */}
           <div className="relative w-full h-64 sm:h-72 lg:h-80 rounded-full overflow-hidden bg-gradient-to-tr from-indigo-900/60 to-purple-900/60 shadow-2xl ring-4 ring-white/20 group-hover:ring-cyan-400/60 group-hover:shadow-cyan-500/20 group-hover:shadow-2xl transition-all duration-300">
             <img
-              src="/profile.jpg"
-              alt="Kiran Bandaru - DevOps / SRE Engineer"
+              src="/Profile.png"
+              alt="Kiran Subrahamanya Sai Bandaru - DevOps / SRE Engineer"
               className="w-full h-full object-cover object-top"
-              onError={(e) => {
-                const el = e.currentTarget;
-                if (el.src.includes("profile.png.jpg")) el.src = "/profile.jpg";
-              }}
             />
             {/* Inner Glow Effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10" />
@@ -76,9 +72,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 mb-4 tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 mb-4 tracking-tight"
           >
-            Kiran Bandaru
+            KIRAN SUBRAHAMANYA SAI BANDARU
           </motion.h1>
 
           <motion.p
@@ -87,8 +83,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-xl sm:text-2xl text-accent-cobalt font-semibold mb-4"
           >
-            DevOps / SRE Engineer
-            
+            DevOps Engineer | AWS & Azure | Kubernetes, Docker & Terraform | CI/CD Automation | GitHub Actions, Jenkins & Argo CD | Observability & SRE | Dublin (Stamp 1G)
           </motion.p>
 
           <motion.p
@@ -99,6 +94,13 @@ export default function Hero() {
           >
            DevOps Engineer specializing in automation, CI/CD pipelines, containerization, and cloud-native infrastructure to build scalable and reliable systems.
           </motion.p>
+
+          <div className="flex flex-col gap-1 text-gray-400 text-sm mb-6">
+            <a href="mailto:saikiran19991223@gmail.com" className="hover:text-cyan-400 transition-colors">
+              saikiran19991223@gmail.com
+            </a>
+            <span>Dublin, Ireland</span>
+          </div>
 
           {/* Buttons */}
           <motion.div
@@ -113,14 +115,6 @@ export default function Hero() {
             >
               View My Work <FaArrowRight className="ml-2" />
             </Link>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-xl border border-gray-600 text-gray-300 font-medium hover:border-cyan-400 hover:text-cyan-400 transition-transform hover:scale-105"
-            >
-              Download Resume <FaDownload className="ml-2" />
-            </a>
           </motion.div>
 
           {/* Empty spacer (skills link removed per request) */}

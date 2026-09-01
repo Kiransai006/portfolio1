@@ -30,23 +30,23 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-md"
       style={{ background: "var(--navbar-bg)" }}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link
           href="#home"
           className="group flex items-center gap-2.5 font-semibold text-white transition-colors hover:text-accent-cobalt"
-          aria-label="Kiran Bandaru - Home"
+          aria-label="Kiran Subrahamanya Sai Bandaru - Home"
         >
           <span className="flex h-9 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 px-1.5 py-1 shadow-sm transition-all group-hover:border-cyan-400/40 group-hover:bg-white/10 group-hover:shadow-md">
             <span className="font-mono text-sm font-bold tracking-tighter text-white">
               K<span className="text-cyan-400/90">B</span>
             </span>
           </span>
-          <span className="hidden text-base tracking-tight sm:inline md:text-lg">Kiran Bandaru</span>
+          <span className="hidden text-sm tracking-tight sm:inline md:text-base">Kiran Bandaru</span>
         </Link>
 
         <div className="flex items-center gap-4">
           {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-5 lg:gap-7">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
