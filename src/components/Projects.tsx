@@ -4,6 +4,36 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    period: "Independent Project",
+    title: "OmniShop Enterprise Platform",
+    institution: "Personal Project",
+    degree: "DevSecOps",
+    description:
+      "Created a cloud-native e-commerce reference platform with a React dashboard, Python/Flask microservices for orders and products, and an end-to-end DevSecOps workflow.",
+    details: [
+      "Containerised the application with Docker and Docker Compose, with a local setup that includes Prometheus, Grafana, and synthetic traffic for live metrics.",
+      "Provisioned AWS cloud infrastructure, including an EKS-based Kubernetes environment, using Terraform.",
+      "Automated build, test, and deployment workflows with GitHub Actions and ArgoCD GitOps.",
+      "Integrated Trivy container vulnerability scanning and Cosign image signing, with Prometheus metrics and Grafana dashboards for observability.",
+    ],
+    skills: [
+      "React",
+      "Python",
+      "Flask",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Terraform",
+      "GitHub Actions",
+      "ArgoCD",
+      "Trivy",
+      "Cosign",
+      "Prometheus",
+      "Grafana",
+    ],
+    githubUrl: "https://github.com/Kiransai006/OmniShop-Enterprise-Platform-main",
+  },
+  {
     period: "Feb 2025 – Apr 2025",
     title: "Multi-User Task Management System",
     institution: "Griffith College Dublin",
@@ -26,6 +56,7 @@ const projects = [
       "NoSQL",
       "Cloud Architecture",
     ],
+    githubUrl: null,
   },
   {
     period: "Feb 2025 – May 2025",
@@ -50,6 +81,7 @@ const projects = [
       "NoSQL",
       "Cloud Architecture",
     ],
+    githubUrl: null,
   },
   {
     period: "Feb 2025 – Mar 2025",
@@ -71,6 +103,7 @@ const projects = [
       "Firestore",
       "NoSQL",
     ],
+    githubUrl: null,
   },
 ];
 
@@ -95,7 +128,7 @@ export default function Projects() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-gray-400 text-lg mb-16 max-w-2xl"
         >
-          A mix of professional deployment projects and college work demonstrating cloud engineering, DevOps automation, and GCP application development.
+          Professional, personal, and college projects demonstrating cloud engineering, DevSecOps automation, and application development.
         </motion.p>
 
         <div className="space-y-8">
@@ -120,6 +153,16 @@ export default function Projects() {
                     </span>
                   </div>
                 </div>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-cyan-300 hover:text-cyan-200 transition-colors shrink-0"
+                  >
+                    View on GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </div>
 
               <p className="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
