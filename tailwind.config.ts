@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         accent: {
-          DEFAULT: "#2563eb",
+          DEFAULT: "#38bdf8",
           orange: "#ff9900",
-          cobalt: "#2563eb",
+          cobalt: "#38bdf8",
         },
         dark: {
           900: "#0a0a0f",

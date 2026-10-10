@@ -30,7 +30,7 @@ export default function Education() {
         </motion.h2>
 
         <div className="relative">
-          <div className="absolute left-[19px] sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-400 via-cyan-500/60 to-transparent" />
+          <div className="absolute left-[19px] sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-sky-400/70 via-sky-500/30 to-transparent" />
           <ul className="space-y-12">
             {education.map((edu, i) => (
               <motion.li
@@ -41,8 +41,8 @@ export default function Education() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative pl-14 sm:pl-20"
               >
-                <div className="absolute left-0 top-1.5 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-indigo-400 ring-4 ring-[#1e1b4b]" />
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/30 transition-colors">
+                <div className="absolute left-0 top-1.5 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-sky-400 ring-4 ring-[#050505]" />
+                <div className="rounded-xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition-colors hover:border-sky-400/25">
                   <p className="text-accent-cobalt font-mono text-sm mb-1">{edu.period}</p>
                   <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
                   <p className="text-gray-400 font-medium mb-4">{edu.institution}</p>

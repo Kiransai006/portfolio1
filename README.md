@@ -60,6 +60,23 @@ This app can be deployed on platforms like Vercel or Netlify.
 2. Build command: `npm run build`
 3. Output directory: default for Next.js App Router
 
+### Docker
+
+Build and run the production image locally:
+
+```bash
+docker build -t kiransai006/portfolio:latest .
+docker run --rm -p 3000:3000 --env-file .env.local kiransai006/portfolio:latest
+```
+
+If you do not need the contact form email integration, start the container without
+`--env-file`. Keep `.env.local` out of source control and never bake secrets into
+the image. Push the image to Docker Hub after authenticating with `docker login`:
+
+```bash
+docker push kiransai006/portfolio:latest
+```
+
 ## Technologies
 
 - Next.js 14

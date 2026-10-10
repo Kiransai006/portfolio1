@@ -132,7 +132,7 @@ export default function Contact() {
                 type="text"
                 required
                 placeholder="Your name"
-                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-cyan-400/50 focus:outline-none focus:ring-1 focus:ring-cyan-400/30"
+                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-sky-400/50 focus:outline-none focus:ring-1 focus:ring-sky-400/30"
               />
             </div>
             <div>
@@ -145,7 +145,7 @@ export default function Contact() {
                 type="email"
                 required
                 placeholder="Your email"
-                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-cyan-400/50 focus:outline-none focus:ring-1 focus:ring-cyan-400/30"
+                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-sky-400/50 focus:outline-none focus:ring-1 focus:ring-sky-400/30"
               />
             </div>
             <div>
@@ -158,7 +158,7 @@ export default function Contact() {
                 required
                 rows={4}
                 placeholder="Your message..."
-                className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-cyan-400/50 focus:outline-none focus:ring-1 focus:ring-cyan-400/30 resize-y min-h-[100px]"
+                className="w-full min-h-[100px] resize-y rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-sky-400/50 focus:outline-none focus:ring-1 focus:ring-sky-400/30"
               />
             </div>
             {status === "success" && (
@@ -170,7 +170,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-xl bg-gradient-to-r from-purple-500 to-cyan-400 py-3 px-4 font-medium text-white shadow-lg hover:opacity-95 disabled:opacity-70 disabled:cursor-not-allowed transition-opacity"
+              className="w-full rounded-lg bg-sky-600 px-4 py-3 font-medium text-white shadow-lg shadow-sky-950/30 transition-colors hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {status === "sending" ? "Sending..." : "Send message"}
             </button>
@@ -199,7 +199,7 @@ export default function Contact() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-indigo-400/50 hover:text-indigo-300 transition-colors text-gray-300"
+                className="inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-6 py-4 text-gray-300 backdrop-blur-sm transition-colors hover:border-sky-400/30 hover:text-sky-200"
               >
                 {item.icon}
                 <span>{item.label}</span>

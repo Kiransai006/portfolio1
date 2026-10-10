@@ -96,7 +96,7 @@ export default function DevOpsBackground() {
         return (
           <div
             key={`${logo.id}-${i}`}
-            className="absolute text-white/[0.06] transition-colors duration-300"
+            className="absolute text-white/[0.035] transition-colors duration-300"
             style={{
               top: pos.top,
               left: pos.left,

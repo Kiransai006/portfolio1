@@ -87,10 +87,10 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/30 transition-colors"
+              className="rounded-xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition-colors hover:border-sky-400/25"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center text-white text-xl shadow-sm">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-sky-400/20 bg-sky-400/10 text-xl text-sky-300">
                   {category.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-white">{category.title}</h3>
@@ -99,7 +99,7 @@ export default function Skills() {
                 {category.items.map((skill) => {
                   const url = getSkillUrl(skill);
                   const content = (
-                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-gradient-to-r from-purple-400 to-cyan-400 text-white text-sm font-semibold shadow-md transform hover:scale-105 transition-all">
+                    <span className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.06] px-3 py-1.5 text-sm font-medium text-gray-200 transition-colors hover:border-sky-400/30 hover:text-sky-200">
                       {skill}
                     </span>
                   );

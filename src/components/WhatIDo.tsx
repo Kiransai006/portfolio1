@@ -50,10 +50,10 @@ export default function WhatIDo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-indigo-400/50 transition-all overflow-hidden"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition-colors hover:border-sky-400/30"
             >
               {/* Gradient background on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 to-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-400/[0.06] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               
               <div className="relative z-10">
                 <div className="text-4xl mb-3">{service.icon}</div>
@@ -62,7 +62,7 @@ export default function WhatIDo() {
               </div>
 
               {/* Accent line on hover */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <div className="absolute bottom-0 left-0 right-0 h-px origin-left scale-x-0 bg-sky-400 transition-transform duration-300 group-hover:scale-x-100" />
             </motion.div>
           ))}
         </div>
