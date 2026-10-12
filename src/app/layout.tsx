@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import DevOpsBackground from "../components/DevOpsBackground";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
 
 export const metadata: Metadata = {
   title: "Kiran Subrahamanya Sai Bandaru | AWS DevOps Engineer",
@@ -29,7 +18,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className="scroll-smooth"
     >
       <body className="font-sans text-gray-100 min-h-screen relative">
         <DevOpsBackground />

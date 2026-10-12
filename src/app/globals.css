@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --accent: #38bdf8;
-  --accent-orange: #ff9900;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-body: #050505;
-  --navbar-bg: rgba(0, 0, 0, 0.88);
+  --accent: #f43f5e;
+  --accent-orange: #ff735c;
+  --bg-card: rgba(255, 255, 255, 0.045);
+  --bg-body: #080304;
+  --navbar-bg: rgba(8, 3, 4, 0.9);
 }
 
 [data-theme="night"] {
-  --bg-body: #000;
-  --navbar-bg: rgba(0, 0, 0, 0.94);
+  --bg-body: #080304;
+  --navbar-bg: rgba(8, 3, 4, 0.94);
 }
 
 html {
@@ -25,14 +25,14 @@ body {
   background-attachment: fixed;
 }
 
-/* Subtle charcoal lighting keeps the black theme from feeling flat. */
+/* Keep text legible while letting the red portrait sequence read through. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255, 255, 255, 0.045), transparent 70%),
-    radial-gradient(ellipse 50% 35% at 100% 65%, rgba(255, 255, 255, 0.018), transparent 70%);
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(248, 64, 83, 0.055), transparent 70%),
+    linear-gradient(180deg, rgba(8, 3, 4, 0.05), rgba(8, 3, 4, 0.3));
   pointer-events: none;
   z-index: 0;
 }
@@ -57,11 +57,30 @@ body::before {
 
 /* Selection */
 ::selection {
-  background: rgba(56, 189, 248, 0.3);
+  background: rgba(244, 63, 94, 0.35);
   color: #fff;
 }
 
-/* Fun section: floating DevOps logos */
+.portfolio-background-frame {
+  transform: translate3d(0, var(--scroll-offset, 0px), 0) scale(1.08);
+  filter: brightness(0.72) saturate(0.92);
+  animation: background-frame-reveal 300ms ease-out both;
+  will-change: transform, opacity;
+}
+
+@keyframes background-frame-reveal {
+  from { opacity: 0.72; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-background-frame {
+    animation: none;
+    transform: scale(1.04);
+    will-change: auto;
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(6px, -6px) scale(1.02); }

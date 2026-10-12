@@ -4,105 +4,110 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
+const capabilities = [
+  "Cloud infrastructure",
+  "CI/CD automation",
+  "Kubernetes & GitOps",
+  "Reliability engineering",
+];
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 lg:pt-28 overflow-hidden"
+      className="relative isolate flex min-h-[100svh] overflow-hidden px-6 pb-8 pt-24 sm:pt-28"
     >
-      <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-64 sm:w-72 lg:w-[22rem]"
-        >
-          <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-[#111] shadow-2xl shadow-black/40">
-            <img
-              src="/Profile.png"
-              alt="Kiran Subrahamanya Sai Bandaru - DevOps / SRE Engineer"
-              className="h-full w-full object-cover object-top"
-            />
-          </div>
-        </motion.div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[#080304]/65 via-[#080304]/20 to-[#080304]/25"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-[#080304]/15 via-transparent to-[#080304]/65"
+      />
 
-        {/* Text Content */}
-        <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="mb-3 font-mono text-sm tracking-wide text-sky-400"
-          >
-            Hi, I&apos;m
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-4 max-w-xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.5rem]"
-          >
-            Kiran Subrahamanya Sai{" "}
-            <span className="text-sky-400">Bandaru</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="mb-2 text-xl font-semibold text-gray-100 sm:text-2xl"
-          >
-            DevOps Engineer
-          </motion.p>
-
-          <p className="mb-4 text-sm font-medium tracking-wide text-sky-300 sm:text-base">
-            AWS &amp; Azure <span className="px-1 text-gray-600">·</span>{" "}
-            Kubernetes <span className="px-1 text-gray-600">·</span> Terraform{" "}
-            <span className="px-1 text-gray-600">·</span> CI/CD &amp; SRE
-          </p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-gray-400 text-lg mb-6"
-          >
-           DevOps Engineer with 3.5 years of experience building CI/CD pipelines and automating cloud infrastructure. Focused on secure delivery, Kubernetes operations, and reliable production systems.
-          </motion.p>
-
-          <div className="flex flex-col gap-1 text-gray-400 text-sm mb-6">
-            <a href="mailto:saikiran19991223@gmail.com" className="transition-colors hover:text-sky-300">
-              saikiran19991223@gmail.com
-            </a>
-            <span>Dublin, Ireland</span>
-          </div>
-
-          {/* Buttons */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-between">
+        <div className="grid flex-1 items-center gap-12 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start"
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className="max-w-3xl"
           >
-            <Link
-              href="#experience"
-              className="inline-flex items-center rounded-lg bg-sky-600 px-6 py-3 font-medium text-white shadow-lg shadow-sky-950/30 transition-colors hover:bg-sky-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-            >
-              View My Work <FaArrowRight className="ml-2" />
-            </Link>
+            <p className="mb-5 font-mono text-sm font-semibold uppercase tracking-[0.22em] text-orange-300 sm:text-base">
+              Hey, I&apos;m Kiran Bandaru
+            </p>
+            <h1 className="text-6xl font-bold leading-[0.9] tracking-[-0.065em] text-white sm:text-7xl md:text-8xl xl:text-[7.5rem]">
+              DevOps
+              <br />
+              Engineer
+            </h1>
+            <p className="mt-7 max-w-xl text-base font-medium leading-relaxed text-rose-100/90 sm:text-lg">
+              AWS &amp; Azure <span className="px-1 text-rose-300/60">·</span>{" "}
+              Kubernetes <span className="px-1 text-rose-300/60">·</span>{" "}
+              Terraform <span className="px-1 text-rose-300/60">·</span> CI/CD
+              &amp; SRE
+            </p>
           </motion.div>
 
-          {/* Empty spacer (skills link removed per request) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-8"
-            aria-hidden
-          />
-          
+            transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
+            className="max-w-lg lg:ml-auto lg:pt-12"
+          >
+            <h2 className="mb-4 text-2xl font-semibold leading-snug text-white sm:text-3xl">
+              I build cloud platforms that are secure, scalable, and dependable.
+            </h2>
+            <p className="mb-8 text-base leading-relaxed text-gray-200/85 sm:text-lg">
+              I&apos;m a DevOps Engineer with 3.5 years of experience automating
+              delivery and infrastructure for production systems. I help teams
+              ship confidently through practical cloud engineering, Kubernetes,
+              and reliable CI/CD.
+            </p>
+            <p className="mb-7 text-sm font-medium text-rose-100/75">
+              Dublin, Ireland <span className="px-2 text-rose-300/60">/</span>{" "}
+              3.5 years in DevOps
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="#projects"
+                className="group inline-flex items-center gap-4 rounded-full bg-white py-2 pl-5 pr-2 text-sm font-semibold text-[#171012] transition-colors hover:bg-rose-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#100507]"
+              >
+                Explore my work
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-600 text-white transition-transform group-hover:translate-x-0.5">
+                  <FaArrowRight aria-hidden="true" className="text-xs" />
+                </span>
+              </Link>
+              <Link
+                href="#contact"
+                className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/70 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#100507]"
+              >
+                Get in touch
+              </Link>
+            </div>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.35 }}
+          className="grid grid-cols-2 border-t border-white/20 py-5 sm:grid-cols-4 sm:py-6"
+          aria-label="Core capabilities"
+        >
+          {capabilities.map((capability, index) => (
+            <div
+              key={capability}
+              className="flex items-baseline gap-2 py-2 pr-3 text-sm font-medium text-white/90 sm:gap-3 sm:py-1 sm:text-base"
+            >
+              <span className="font-mono text-sm font-bold text-orange-300 sm:text-base">
+                #{String(index + 1).padStart(2, "0")}
+              </span>
+              <span>{capability}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
