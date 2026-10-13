@@ -28,12 +28,12 @@ export default function Navbar() {
       >
         <Link
           href="#home"
-          className="group flex items-center gap-3 rounded-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+          className="group flex items-center gap-3 rounded-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
           aria-label="Kiran Bandaru - Home"
           onClick={() => setMobileOpen(false)}
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/[0.04] font-mono text-sm font-bold tracking-tight transition-colors group-hover:border-sky-400/50">
-            K<span className="text-sky-400">B</span>
+          <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/[0.04] font-mono text-sm font-bold tracking-tight transition-colors group-hover:border-rose-400/50">
+            K<span className="text-rose-400">B</span>
           </span>
           <span className="text-sm font-semibold tracking-wide sm:text-base">
             Kiran Bandaru
@@ -46,7 +46,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 transition-colors hover:text-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+                  className="text-sm font-medium text-gray-300 transition-colors hover:text-rose-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
                 >
                   {link.label}
                 </Link>
@@ -56,14 +56,14 @@ export default function Navbar() {
 
           <Link
             href="#contact"
-            className="hidden rounded-lg border border-white/15 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-sky-400/60 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 md:inline-flex"
+            className="hidden rounded-full border border-rose-300/35 bg-rose-500/10 px-4 py-2 text-sm font-medium text-rose-100 transition-colors hover:border-rose-300/60 hover:bg-rose-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 md:inline-flex"
           >
             Contact
           </Link>
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-lg border border-white/15 p-2 text-gray-200 transition-colors hover:border-white/30 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 md:hidden"
+            className="inline-flex items-center justify-center rounded-lg border border-white/15 p-2 text-gray-200 transition-colors hover:border-rose-300/50 hover:bg-rose-950/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 md:hidden"
             onClick={() => setMobileOpen((open) => !open)}
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
@@ -113,8 +113,8 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-white/[0.06] hover:text-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${
-                  link.href === "#contact" ? "text-sky-300" : "text-gray-300"
+                className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-white/[0.06] hover:text-rose-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400 ${
+                link.href === "#contact" ? "text-rose-300" : "text-gray-300"
                 }`}
                 tabIndex={mobileOpen ? 0 : -1}
                 onClick={() => setMobileOpen(false)}
