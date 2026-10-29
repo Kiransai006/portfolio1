@@ -31,7 +31,7 @@ export default function About() {
     >
 
       <p>
-        I turn chaos into code. With 3.5 years as a DevOps Engineer at Cognizant, I’ve mastered the art of automating deployments, optimizing cloud environments, and making software delivery seamless. What started as a career quickly became a hobby—I genuinely enjoy building pipelines, architecting AWS solutions, and seeing systems run flawlessly.
+        I turn chaos into code. With 4+ years as a DevOps Engineer, I’ve mastered the art of automating deployments, optimizing cloud environments, and making software delivery seamless. What started as a career quickly became a hobby—I genuinely enjoy building pipelines, architecting AWS solutions, and seeing systems run flawlessly.
       </p>
 
       <p className="font-semibold">The &quot;Kiran&quot; Edge</p>

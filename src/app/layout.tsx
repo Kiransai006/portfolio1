@@ -6,7 +6,7 @@ import DevOpsBackground from "../components/DevOpsBackground";
 export const metadata: Metadata = {
   title: "Kiran Subrahamanya Sai Bandaru | AWS DevOps Engineer",
   description:
-    "AWS DevOps Engineer / Systems Engineer with 3.5 years of experience. Cloud-native platforms, CI/CD automation, Kubernetes.",
+    "AWS DevOps Engineer / Systems Engineer with 4+ years of experience. Cloud-native platforms, CI/CD automation, Kubernetes.",
 };
 
 export default function RootLayout({

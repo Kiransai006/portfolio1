@@ -212,13 +212,13 @@ export default function Hero() {
             </p>
             <p className="mt-4 text-sm font-medium text-rose-100/75">
               Dublin, Ireland <span className="px-2 text-rose-300/60">/</span>
-              3.5 years
+              4+ years
             </p>
 
             <div className="mt-7 grid max-w-xl grid-cols-3 gap-2.5 sm:gap-3">
               <div className="hero-stat-card">
                 <p className="text-xl font-semibold text-white sm:text-2xl">
-                  <CountUp value={3.5} suffix="+" decimals={1} />
+                  <CountUp value={4} suffix="+" />
                 </p>
                 <p className="mt-1 text-[10px] text-rose-100/70 sm:text-xs">
                   years in DevOps

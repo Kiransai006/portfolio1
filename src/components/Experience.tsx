@@ -2,9 +2,20 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
+type Experience = {
+  period: string;
+  role: string;
+  company: string;
+  companyUrl: string;
+  client?: string;
+  clientUrl?: string;
+  responsibilities: string[];
+};
+
+const experiences: Experience[] = [
   {
     period: "Mar 2023 – Feb 2025",
+    role: "DevOps Engineer",
     client: "RELX",
     clientUrl: "https://www.relx.com/",
     company: "Cognizant Technology Solutions",
@@ -23,22 +34,17 @@ const experiences = [
     ],
   },
   {
-    period: "Sep 2021 – Mar 2023",
-    client: "Kotak",
-    clientUrl: "https://www.kotak.com/",
-    company: "Cognizant Technology Solutions",
-    companyUrl: "https://www.cognizant.com/",
+    period: "Jan 2021 – Aug 2021",
+    role: "Cloud Deployment & Monitoring Support",
+    company: "deBots",
+    companyUrl: "https://www.debots.ai/",
     responsibilities: [
-      "Automated infrastructure provisioning using Terraform, enabling the rapid deployment of cloud resources across multi-region AWS environments.",
-      "Developed and maintained Ansible playbooks for configuration management and automated application deployments, ensuring consistent environment setup across development, staging, and production.",
-      "Integrated Jenkins pipelines with Git repositories to enable continuous integration and delivery (CI/CD), automating build processes with Maven for Java-based applications.",
-      "Implemented Git branching strategies, such as feature branching and GitFlow, to ensure smooth version control and collaboration across multiple development teams.",
-      "Automated the provisioning of application dependencies and configurations using Ansible, reducing manual setup time by 50% and eliminating configuration drift between environments.",
-      "Created reusable Terraform modules for cloud infrastructure, reducing time spent on manual configurations and ensuring consistency across environments.",
-      "Integrated Ansible with Jenkins to automate post-deployment configurations, improving deployment reliability and reducing downtime.",
-      "Utilized Terraform for Infrastructure as Code (IaC) to manage and version AWS infrastructure, ensuring that environment changes are trackable and reversible.",
-      "Streamlined build and test processes with Maven in Jenkins pipelines, automating unit testing and code quality checks before deployment to production.",
-      "Collaborated with development and operations teams to implement infrastructure changes through Git version control, ensuring all updates were peer-reviewed and compliant with best practices.",
+      "Worked on a live cloud project with developers and senior engineers, supporting application deployments on AWS.",
+      "Wrote Terraform code to provision AWS resources such as EC2, S3, VPC and IAM, with all changes version-controlled in Git.",
+      "Set up and maintained Jenkins pipelines integrated with GitLab to automate build, test and deployment of application code.",
+      "Monitored application and server health using AWS CloudWatch, reviewed logs and alerts, and helped resolve deployment and environment issues.",
+      "Created reusable Terraform modules to reduce repetitive setup and keep environments consistent.",
+      "Followed Git branching and code review practices and documented deployment steps and fixes for the team.",
     ],
   },
 ];
@@ -66,7 +72,7 @@ export default function Experience() {
           <ul className="space-y-12">
             {experiences.map((experience, index) => (
               <motion.li
-                key={`${experience.period}-${experience.client}`}
+                key={experience.period}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -82,7 +88,7 @@ export default function Experience() {
                     {experience.period}
                   </p>
                   <h3 className="text-xl font-semibold text-white">
-                    DevOps Engineer
+                    {experience.role}
                   </h3>
                   <p className="mb-4 mt-1 text-sm font-medium text-gray-300">
                     <a
@@ -93,16 +99,20 @@ export default function Experience() {
                     >
                       {experience.company}
                     </a>
-                    <span className="px-2 text-gray-500">·</span>
-                    Client:{" "}
-                    <a
-                      href={experience.clientUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-sm text-rose-200 underline decoration-rose-300/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
-                    >
-                      {experience.client}
-                    </a>
+                    {experience.client && (
+                      <>
+                        <span className="px-2 text-gray-500">·</span>
+                        Client:{" "}
+                        <a
+                          href={experience.clientUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-sm text-rose-200 underline decoration-rose-300/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+                        >
+                          {experience.client}
+                        </a>
+                      </>
+                    )}
                   </p>
                   <ul className="space-y-2.5">
                     {experience.responsibilities.map((responsibility) => (
